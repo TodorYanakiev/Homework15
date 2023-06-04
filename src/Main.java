@@ -91,6 +91,62 @@ public class Main {
 
         return result.toString();
     }
+    public static void printGlasses (int n){
+        //Първи ред
+        for (int i = 0; i < n*2; i++) {
+            System.out.print('*');
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(' ');
+        }
+        for (int i = 0; i < n*2; i++) {
+            System.out.print('*');
+        }
+        System.out.println();
+        System.out.print('*');
+        for (int i = 0; i < n*2-2; i++) {
+            System.out.print('/');
+        }
+        System.out.print('*');
+        for (int i = 0; i < n; i++) {
+            System.out.print('/');
+        }
+        System.out.print('*');
+        for (int i = 0; i < n*2-2; i++) {
+            System.out.print('/');
+        }
+        System.out.print('*');
+        System.out.println();
+        for (int i = 0; i < n-3; i++) {
+            System.out.print('*');
+            for (int j = 0; j < n*2-2; j++) {
+                System.out.print('/');
+            }
+            System.out.print('*');
+            for (int j = 0; j < n; j++) {
+                System.out.print(' ');
+            }
+            System.out.print('*');
+            for (int j = 0; j < n*2-2; j++) {
+                System.out.print('/');
+            }
+            System.out.print('*');
+        }
+        if (n-3 != 0){
+            System.out.println();
+        }
+
+        //Последен ред
+        for (int i = 0; i < n*2; i++) {
+            System.out.print('*');
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(' ');
+        }
+        for (int i = 0; i < n*2; i++) {
+            System.out.print('*');
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //ex2
@@ -117,9 +173,14 @@ public class Main {
 //        makeTxtFileWithExclamationMarkTriangle(n);
 
         //ex5
-        System.out.println("Enter a number:");
+//        System.out.println("Enter a number:");
+//        int n = sc.nextInt();
+//        String square = makeSquare(n);
+//        System.out.println(square);
+
+        //ex6
+        System.out.println("Enter n:");
         int n = sc.nextInt();
-        String square = makeSquare(n);
-        System.out.println(square);
+        printGlasses(n);
     }
 }
