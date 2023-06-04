@@ -59,6 +59,38 @@ public class Main {
             System.out.println(e);
         }
     }
+    public static String makeSquare (int n){
+        StringBuilder result = new StringBuilder();
+        //Първи ред
+        result.append("? ");
+        for (int i = 0; i < n-2; i++) {
+            result.append("- ");
+        }
+        result.append("?");
+        result.append("\n");
+        //Средни редов
+        for (int i = 0; i < n-2; i++) {
+            result.append("| ");
+            for (int j = 0; j < n-2; j++) {
+                result.append("- ");
+            }
+            result.append("|");
+            if (i != n-3){
+                result.append("\n");
+            }
+        }
+        if (n-2 != 0){
+            result.append("\n");
+        }
+        //Последен ред
+        result.append("? ");
+        for (int i = 0; i < n-2; i++) {
+            result.append("- ");
+        }
+        result.append("?");
+
+        return result.toString();
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //ex2
@@ -85,6 +117,9 @@ public class Main {
 //        makeTxtFileWithExclamationMarkTriangle(n);
 
         //ex5
-
+        System.out.println("Enter a number:");
+        int n = sc.nextInt();
+        String square = makeSquare(n);
+        System.out.println(square);
     }
 }
